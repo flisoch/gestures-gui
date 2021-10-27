@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GesturesView</class>
+ <widget class="QWidget" name="GesturesView">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>488</width>
+    <height>434</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="11" column="1">
+       <widget class="QKeySequenceEdit" name="keySequenceEdit_12"/>
+      </item>
+      <item row="10" column="0">
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>Pinch In</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QKeySequenceEdit" name="keySequenceEdit_5"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Swipe Down</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1">
+       <widget class="QKeySequenceEdit" name="keySequenceEdit_11"/>
+      </item>
+      <item row="6" column="1">
+       <widget class="QKeySequenceEdit" name="keySequenceEdit_3"/>
+      </item>
+      <item row="5" column="1">
+       <widget class="QKeySequenceEdit" name="keySequenceEdit_4"/>
+      </item>
+      <item row="9" column="1">
+       <widget class="QKeySequenceEdit" name="keySequenceEdit_8"/>
+      </item>
+      <item row="5" column="2">
+       <widget class="QLineEdit" name="lineEdit_5"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Swipe Up</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="2">
+       <widget class="QLineEdit" name="lineEdit_16"/>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Swipe Up-Right</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>Swipe Down-Left</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_14">
+        <property name="text">
+         <string>Command</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLineEdit" name="lineEdit_2"/>
+      </item>
+      <item row="11" column="2">
+       <widget class="QLineEdit" name="lineEdit_11"/>
+      </item>
+      <item row="2" column="2">
+       <widget class="QLineEdit" name="lineEdit_8"/>
+      </item>
+      <item row="7" column="1">
+       <widget class="QKeySequenceEdit" name="keySequenceEdit_10"/>
+      </item>
+      <item row="3" column="1">
+       <widget class="QKeySequenceEdit" name="keySequenceEdit_6"/>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Swipe Right</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Shortcut command</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0">
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>Tap</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QKeySequenceEdit" name="keySequenceEdit_9"/>
+      </item>
+      <item row="11" column="0">
+       <widget class="QLabel" name="label_13">
+        <property name="text">
+         <string>Pinch Out</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>Swipe Down-Right</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Gesture</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QLineEdit" name="lineEdit_6"/>
+      </item>
+      <item row="9" column="2">
+       <widget class="QLineEdit" name="lineEdit_12"/>
+      </item>
+      <item row="1" column="1">
+       <widget class="QKeySequenceEdit" name="keySequenceEdit_2"/>
+      </item>
+      <item row="7" column="2">
+       <widget class="QLineEdit" name="lineEdit_10"/>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Swipe Up-Left</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QLineEdit" name="lineEdit_7"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Swipe Left</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="2">
+       <widget class="QLineEdit" name="lineEdit_4"/>
+      </item>
+      <item row="2" column="1">
+       <widget class="QKeySequenceEdit" name="keySequenceEdit_7"/>
+      </item>
+      <item row="10" column="2">
+       <widget class="QLineEdit" name="lineEdit_9"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
