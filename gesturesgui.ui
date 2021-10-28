@@ -24,7 +24,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="touchpad">
        <attribute name="title">
@@ -69,6 +69,19 @@
        <attribute name="title">
         <string>Settings</string>
        </attribute>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>180</y>
+          <width>89</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Config file</string>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>

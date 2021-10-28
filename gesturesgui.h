@@ -16,6 +16,9 @@ public:
     GesturesGui(QWidget *parent = nullptr);
     ~GesturesGui();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::GesturesGui *ui;
     GesturesView *gestureview;

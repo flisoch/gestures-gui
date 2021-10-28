@@ -43,6 +43,11 @@
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="gesturesgui.ui" line="82"/>
+        <source>Config file</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GesturesView</name>
