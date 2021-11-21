@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>488</width>
-    <height>434</height>
+    <height>461</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -50,7 +50,7 @@
        <widget class="QKeySequenceEdit" name="keySequenceEdit_8"/>
       </item>
       <item row="5" column="2">
-       <widget class="QLineEdit" name="lineEdit_5"/>
+       <widget class="QLineEdit" name="swipe_up_right_command"/>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
@@ -60,7 +60,7 @@
        </widget>
       </item>
       <item row="8" column="2">
-       <widget class="QLineEdit" name="lineEdit_16"/>
+       <widget class="QLineEdit" name="swipe_down_left_command"/>
       </item>
       <item row="5" column="0">
        <widget class="QLabel" name="label_7">
@@ -84,13 +84,13 @@
        </widget>
       </item>
       <item row="1" column="2">
-       <widget class="QLineEdit" name="lineEdit_2"/>
+       <widget class="QLineEdit" name="swipe_up_command"/>
       </item>
       <item row="11" column="2">
-       <widget class="QLineEdit" name="lineEdit_11"/>
+       <widget class="QLineEdit" name="pinch_out"/>
       </item>
       <item row="2" column="2">
-       <widget class="QLineEdit" name="lineEdit_8"/>
+       <widget class="QLineEdit" name="swipe_down_command"/>
       </item>
       <item row="7" column="1">
        <widget class="QKeySequenceEdit" name="keySequenceEdit_10"/>
@@ -144,16 +144,16 @@
        </widget>
       </item>
       <item row="4" column="2">
-       <widget class="QLineEdit" name="lineEdit_6"/>
+       <widget class="QLineEdit" name="swipe_right_command"/>
       </item>
       <item row="9" column="2">
-       <widget class="QLineEdit" name="lineEdit_12"/>
+       <widget class="QLineEdit" name="tap_command"/>
       </item>
       <item row="1" column="1">
        <widget class="QKeySequenceEdit" name="keySequenceEdit_2"/>
       </item>
       <item row="7" column="2">
-       <widget class="QLineEdit" name="lineEdit_10"/>
+       <widget class="QLineEdit" name="swipe_down_right_command"/>
       </item>
       <item row="6" column="0">
        <widget class="QLabel" name="label_8">
@@ -163,7 +163,7 @@
        </widget>
       </item>
       <item row="3" column="2">
-       <widget class="QLineEdit" name="lineEdit_7"/>
+       <widget class="QLineEdit" name="left_command"/>
       </item>
       <item row="3" column="0">
        <widget class="QLabel" name="label_5">
@@ -173,13 +173,13 @@
        </widget>
       </item>
       <item row="6" column="2">
-       <widget class="QLineEdit" name="lineEdit_4"/>
+       <widget class="QLineEdit" name="swipe_up_left_command"/>
       </item>
       <item row="2" column="1">
        <widget class="QKeySequenceEdit" name="keySequenceEdit_7"/>
       </item>
       <item row="10" column="2">
-       <widget class="QLineEdit" name="lineEdit_9"/>
+       <widget class="QLineEdit" name="pinch_in"/>
       </item>
      </layout>
     </widget>
