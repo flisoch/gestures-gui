@@ -1,4 +1,4 @@
-#include "gesturesview.h"
+﻿#include "gesturesview.h"
 #include "ui_gesturesview.h"
 
 #include <QFileDialog>
@@ -14,7 +14,8 @@ GesturesView::GesturesView(QWidget *parent, int fingersCount) :
     ui(new Ui::GesturesView)
 {
     ui->setupUi(this);
-    copyCommandsFromConfigFile(fingersCount);
+    this->fingersCount = fingersCount;
+    copyCommandsFromConfigFile();
 }
 
 GesturesView::~GesturesView()
@@ -22,8 +23,81 @@ GesturesView::~GesturesView()
     delete ui;
 }
 
-void GesturesView::copyCommandsFromConfigFile(int fingersCount)
-{
+QString GesturesView::copyCommandStart(QJsonObject value) {
+
+    QJsonArray array = value["start"].toArray();
+    QString command;
+    foreach(QJsonValue val, array) {
+        command += val.toString() + ",";
+    }
+    command.chop(1);
+    qDebug() << command;
+    return command;
+}
+
+QString GesturesView::copyCommandUpdate(QJsonObject value) {
+    return "";
+}
+
+QString GesturesView::copyCommandEnd(QJsonObject value) {
+    QJsonArray array = value["end"].toArray();
+    QString command;
+    foreach(QJsonValue val, array) {
+        command += val.toString() + ",";
+    }
+    command.chop(1);
+    return command;
+}
+
+void GesturesView::setCommand(QString direction, QString command) {
+    if (direction == "l") {
+        ui->left_command->setText(command);
+    }
+    else if (direction == "r") {
+        ui->swipe_right_command->setText(command);
+    }
+    else if (direction == "u") {
+        ui->swipe_up_command->setText(command);
+    }
+    else if (direction == "d") {
+        ui->swipe_down_command->setText(command);
+    }
+    else if (direction == "lu") {
+        ui->swipe_up_left_command->setText(command);
+    }
+    else if (direction == "rd") {
+        ui->swipe_down_right_command->setText(command);
+    }
+    else if (direction == "ld") {
+        ui->swipe_down_left_command->setText(command);
+    }
+    else if (direction == "ru") {
+        ui->swipe_up_right_command->setText(command);
+    }
+}
+
+void GesturesView::copySwipeCommands(QJsonValue swipeCommands) {
+    QString key = QString::number(fingersCount);
+    swipeCommands = swipeCommands.toObject()[key];
+    QJsonObject commands =  swipeCommands.toObject();
+    foreach(const QString& direction, commands.keys()) {
+       qDebug() << direction;
+       QJsonObject value = commands.value(direction).toObject();
+       QString command;
+       command += copyCommandStart(value);
+       command += copyCommandUpdate(value);
+       command += copyCommandEnd(value);
+       setCommand(direction, command);
+       qDebug() << command;
+    }
+}
+
+void GesturesView::copyPinchCommands(QJsonValue value) {
+
+    ui->pinch_in->setText("pinch");
+}
+
+QString GesturesView::readConfigFile() {
     QString homePath = QDir::homePath();
     QFile file(homePath + "/.config/gestures.conf");
 
@@ -42,19 +116,16 @@ void GesturesView::copyCommandsFromConfigFile(int fingersCount)
        }
     file.close();
     text.replace("'", "\"");
-    QJsonDocument config = QJsonDocument::fromJson(text.toUtf8());
-    QJsonObject o = config.object();
-    QJsonValue value = o.value(QString("touchpad")).toObject().value("swipe");
-    qInfo() << value;
-    QString key = QString::number(fingersCount);
-    value = value.toObject().value(key).toObject().value("u").toObject().value("end");
-    qInfo() << value;
-    QJsonArray array = value.toArray();
-    QString command;
-    foreach(QJsonValue val, array) {
-        command += val.toString() + ",";
-    }
-    command.chop(1);
-    qInfo() <<command;
-    ui->swipe_up->setText(command);
+    return text;
+}
+
+void GesturesView::copyCommandsFromConfigFile()
+{
+    QString text = readConfigFile();
+    QJsonObject config = QJsonDocument::fromJson(text.toUtf8()).object();
+
+    QJsonValue commands = config["touchpad"].toObject()["swipe"];
+    copySwipeCommands(commands);
+    commands = config["touchpad"].toObject()["pinch"];
+    copyPinchCommands(commands);
 }

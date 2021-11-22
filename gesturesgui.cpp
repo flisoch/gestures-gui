@@ -12,10 +12,10 @@ GesturesGui::GesturesGui(QWidget *parent)
 {
     ui->setupUi(this);
     QWidget *tab1 = ui->tab;
-    gestureview = new GesturesView(tab1, 1);
-    gestureview = new GesturesView(ui->tab_2, 2);
-    gestureview = new GesturesView(ui->tab_3, 3);
-    gestureview = new GesturesView(ui->tab_4, 4);
+    gestureview = new GesturesView(tab1, 2);
+    gestureview = new GesturesView(ui->tab_2, 3);
+    gestureview = new GesturesView(ui->tab_3, 4);
+    gestureview = new GesturesView(ui->tab_4, 5);
 }
 
 GesturesGui::~GesturesGui()
