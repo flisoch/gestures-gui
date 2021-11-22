@@ -51,7 +51,7 @@ QString GesturesView::copyCommandEnd(QJsonObject value) {
 
 void GesturesView::setCommand(QString direction, QString command) {
     if (direction == "l") {
-        ui->left_command->setText(command);
+        ui->swipe_left_command->setText(command);
     }
     else if (direction == "r") {
         ui->swipe_right_command->setText(command);

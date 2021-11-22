@@ -11,11 +11,22 @@ GesturesGui::GesturesGui(QWidget *parent)
     , ui(new Ui::GesturesGui)
 {
     ui->setupUi(this);
-    QWidget *tab1 = ui->tab;
-    gestureview = new GesturesView(tab1, 2);
+
+    QHBoxLayout *layout = new QHBoxLayout(ui->tab);
+    gestureview = new GesturesView(ui->tab, 2);
+    layout->addWidget(gestureview);
+
+    layout = new QHBoxLayout(ui->tab_2);
     gestureview = new GesturesView(ui->tab_2, 3);
+    layout->addWidget(gestureview);
+
+    layout = new QHBoxLayout(ui->tab_3);
     gestureview = new GesturesView(ui->tab_3, 4);
+    layout->addWidget(gestureview);
+
+    layout = new QHBoxLayout(ui->tab_4);
     gestureview = new GesturesView(ui->tab_4, 5);
+    layout->addWidget(gestureview);
 }
 
 GesturesGui::~GesturesGui()
