@@ -51,28 +51,28 @@ QString GesturesView::copyCommandEnd(QJsonObject value) {
 
 void GesturesView::setCommand(QString direction, QString command) {
     if (direction == "l") {
-        ui->swipe_left_command->setText(command);
+        ui->swipe_left_start->setText(command);
     }
     else if (direction == "r") {
-        ui->swipe_right_command->setText(command);
+        ui->swipe_right_start->setText(command);
     }
     else if (direction == "u") {
-        ui->swipe_up_command->setText(command);
+        ui->swipe_up_start->setText(command);
     }
     else if (direction == "d") {
-        ui->swipe_down_command->setText(command);
+        ui->swipe_down_start->setText(command);
     }
     else if (direction == "lu") {
-        ui->swipe_up_left_command->setText(command);
+        ui->swipe_up_left_start->setText(command);
     }
     else if (direction == "rd") {
-        ui->swipe_down_right_command->setText(command);
+        ui->swipe_down_right_start->setText(command);
     }
     else if (direction == "ld") {
-        ui->swipe_down_left_command->setText(command);
+        ui->swipe_down_left_start->setText(command);
     }
     else if (direction == "ru") {
-        ui->swipe_up_right_command->setText(command);
+        ui->swipe_up_right_start->setText(command);
     }
 }
 
@@ -94,7 +94,7 @@ void GesturesView::copySwipeCommands(QJsonValue swipeCommands) {
 
 void GesturesView::copyPinchCommands(QJsonValue value) {
 
-    ui->pinch_in->setText("pinch");
+    ui->pinch_in_start->setText("pinch");
 }
 
 QString GesturesView::readConfigFile() {

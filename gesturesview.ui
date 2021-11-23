@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1100</width>
-    <height>696</height>
+    <width>1128</width>
+    <height>526</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,172 +16,220 @@
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QWidget" name="widget" native="true">
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="11" column="1">
-       <widget class="QKeySequenceEdit" name="keySequenceEdit_12"/>
-      </item>
-      <item row="10" column="0">
-       <widget class="QLabel" name="label_12">
-        <property name="text">
-         <string>Pinch In</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QKeySequenceEdit" name="keySequenceEdit_5"/>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>Swipe Down</string>
-        </property>
-       </widget>
-      </item>
-      <item row="10" column="1">
-       <widget class="QKeySequenceEdit" name="keySequenceEdit_11"/>
-      </item>
-      <item row="6" column="1">
-       <widget class="QKeySequenceEdit" name="keySequenceEdit_3"/>
-      </item>
-      <item row="5" column="1">
-       <widget class="QKeySequenceEdit" name="keySequenceEdit_4"/>
-      </item>
-      <item row="9" column="1">
-       <widget class="QKeySequenceEdit" name="keySequenceEdit_8"/>
-      </item>
-      <item row="5" column="2">
-       <widget class="QLineEdit" name="swipe_up_right_command"/>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Swipe Up</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="2">
-       <widget class="QLineEdit" name="swipe_down_left_command"/>
-      </item>
-      <item row="5" column="0">
-       <widget class="QLabel" name="label_7">
-        <property name="text">
-         <string>Swipe Up-Right</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="0">
-       <widget class="QLabel" name="label_10">
-        <property name="text">
-         <string>Swipe Down-Left</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QLabel" name="label_14">
-        <property name="text">
-         <string>Command</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QLineEdit" name="swipe_up_command"/>
-      </item>
-      <item row="11" column="2">
-       <widget class="QLineEdit" name="pinch_out"/>
-      </item>
-      <item row="2" column="2">
-       <widget class="QLineEdit" name="swipe_down_command"/>
-      </item>
-      <item row="7" column="1">
-       <widget class="QKeySequenceEdit" name="keySequenceEdit_10"/>
-      </item>
-      <item row="3" column="1">
-       <widget class="QKeySequenceEdit" name="keySequenceEdit_6"/>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label_6">
-        <property name="text">
-         <string>Swipe Right</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>Shortcut command</string>
-        </property>
-       </widget>
-      </item>
-      <item row="9" column="0">
-       <widget class="QLabel" name="label_11">
-        <property name="text">
-         <string>Tap</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="1">
-       <widget class="QKeySequenceEdit" name="keySequenceEdit_9"/>
-      </item>
-      <item row="11" column="0">
-       <widget class="QLabel" name="label_13">
-        <property name="text">
-         <string>Pinch Out</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="0">
-       <widget class="QLabel" name="label_9">
-        <property name="text">
-         <string>Swipe Down-Right</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Gesture</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="2">
-       <widget class="QLineEdit" name="swipe_right_command"/>
-      </item>
-      <item row="9" column="2">
-       <widget class="QLineEdit" name="tap_command"/>
-      </item>
-      <item row="1" column="1">
-       <widget class="QKeySequenceEdit" name="keySequenceEdit_2"/>
-      </item>
-      <item row="7" column="2">
-       <widget class="QLineEdit" name="swipe_down_right_command"/>
-      </item>
-      <item row="6" column="0">
-       <widget class="QLabel" name="label_8">
-        <property name="text">
-         <string>Swipe Up-Left</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QLineEdit" name="swipe_left_command"/>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_5">
-        <property name="text">
-         <string>Swipe Left</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="2">
-       <widget class="QLineEdit" name="swipe_up_left_command"/>
-      </item>
-      <item row="2" column="1">
-       <widget class="QKeySequenceEdit" name="keySequenceEdit_7"/>
-      </item>
-      <item row="10" column="2">
-       <widget class="QLineEdit" name="pinch_in"/>
-      </item>
-     </layout>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>11</y>
+        <width>650</width>
+        <height>419</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="8" column="3">
+        <widget class="QLineEdit" name="swipe_down_left_end"/>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>Tap</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="swipe_down_start"/>
+       </item>
+       <item row="4" column="3">
+        <widget class="QLineEdit" name="swipe_right_end"/>
+       </item>
+       <item row="7" column="3">
+        <widget class="QLineEdit" name="swipe_down_right_end"/>
+       </item>
+       <item row="8" column="1">
+        <widget class="QLineEdit" name="swipe_down_left_start"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Gesture</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QLineEdit" name="swipe_left_update"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Command start</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QLineEdit" name="swipe_left_end"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Swipe Right</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="3">
+        <widget class="QLineEdit" name="pinch_out_end"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Swipe Down</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1">
+        <widget class="QLineEdit" name="pinch_out_start"/>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLineEdit" name="swipe_down_right_start"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Swipe Up-Right</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="swipe_up_start"/>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLineEdit" name="swipe_down_update"/>
+       </item>
+       <item row="10" column="1">
+        <widget class="QLineEdit" name="pinch_in_start"/>
+       </item>
+       <item row="10" column="2">
+        <widget class="QLineEdit" name="pinch_in_update"/>
+       </item>
+       <item row="5" column="2">
+        <widget class="QLineEdit" name="swipe_up_right_update"/>
+       </item>
+       <item row="6" column="2">
+        <widget class="QLineEdit" name="swipe_up_left_update"/>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLineEdit" name="swipe_down_end"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLineEdit" name="swipe_up_update"/>
+       </item>
+       <item row="7" column="2">
+        <widget class="QLineEdit" name="swipe_down_right_update"/>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>Swipe Down-Left</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>Command update</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLineEdit" name="swipe_right_update"/>
+       </item>
+       <item row="8" column="2">
+        <widget class="QLineEdit" name="swipe_down_left_update"/>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="swipe_right_start"/>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="swipe_left_start"/>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLineEdit" name="swipe_up_end"/>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="swipe_up_left_start"/>
+       </item>
+       <item row="9" column="1">
+        <widget class="QLineEdit" name="tap">
+         <property name="alignment">
+          <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Swipe Up</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="2">
+        <widget class="QLineEdit" name="pinch_out_update"/>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="swipe_up_right_start"/>
+       </item>
+       <item row="10" column="3">
+        <widget class="QLineEdit" name="pinch_in_end"/>
+       </item>
+       <item row="5" column="3">
+        <widget class="QLineEdit" name="swipe_up_right_end"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Swipe Left</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Swipe Up-Left</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>Pinch Out</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>Command end</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>Pinch In</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>Swipe Down-Right</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="3">
+        <widget class="QLineEdit" name="swipe_up_left_end"/>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </item>
   </layout>
