@@ -1,4 +1,5 @@
 ﻿#include "gesturesview.h"
+#include "gesturesgui.h"
 #include "ui_gesturesview.h"
 
 #include <QFileDialog>
@@ -7,6 +8,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QSettings>
 
 
 GesturesView::GesturesView(QWidget *parent, int fingersCount) :
@@ -99,7 +101,8 @@ void GesturesView::copyPinchCommands(QJsonValue value) {
 
 QString GesturesView::readConfigFile() {
     QString homePath = QDir::homePath();
-    QFile file(homePath + "/.config/gestures.conf");
+    QSettings settings(ORGANIZATION_NAME, APPLICATION_NAME);
+    QFile file(homePath + settings.value(SETTING_CONFIG_PATH).toString());
 
     if (!file.open(QFile::ReadWrite | QFile::Text)) {
         QMessageBox::warning(this, "title", "file not open");

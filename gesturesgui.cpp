@@ -5,6 +5,7 @@
 #include <QDir>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QSettings>
 
 GesturesGui::GesturesGui(QWidget *parent)
     : QMainWindow(parent)

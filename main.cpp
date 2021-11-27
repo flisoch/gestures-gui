@@ -2,7 +2,16 @@
 
 #include <QApplication>
 #include <QLocale>
+#include <QSettings>
 #include <QTranslator>
+
+void setupSettings() {
+    QCoreApplication::setOrganizationName(ORGANIZATION_NAME);
+    QCoreApplication::setOrganizationDomain(ORGANIZATION_DOMAIN);
+    QCoreApplication::setApplicationName(APPLICATION_NAME);
+    QSettings settings(ORGANIZATION_NAME, APPLICATION_NAME);
+    settings.setValue("configPath", "/.config/gestures.conf");
+}
 
 int main(int argc, char *argv[])
 {
@@ -17,6 +26,8 @@ int main(int argc, char *argv[])
             break;
         }
     }
+
+    setupSettings();
     GesturesGui w;
     w.show();
     return a.exec();
