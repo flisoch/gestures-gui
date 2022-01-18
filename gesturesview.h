@@ -25,7 +25,7 @@ private:
     QString copyCommandStart(QJsonObject value);
     QString copyCommandUpdate(QJsonObject value);
     QString copyCommandEnd(QJsonObject value);
-    void setCommand(QString direction, QString command);
+    void setCommand(QString direction, QJsonObject command);
     QString readConfigFile();
 };
 

@@ -51,30 +51,46 @@ QString GesturesView::copyCommandEnd(QJsonObject value) {
     return command;
 }
 
-void GesturesView::setCommand(QString direction, QString command) {
+void GesturesView::setCommand(QString direction, QJsonObject command) {
     if (direction == "l") {
-        ui->swipe_left_start->setText(command);
+        ui->swipe_left_start->setText(copyCommandStart(command));
+        ui->swipe_left_update->setText(copyCommandUpdate(command));
+        ui->swipe_down_left_end->setText(copyCommandEnd(command));
     }
     else if (direction == "r") {
-        ui->swipe_right_start->setText(command);
+        ui->swipe_right_start->setText(copyCommandStart(command));
+        ui->swipe_right_update->setText(copyCommandUpdate(command));
+        ui->swipe_right_end->setText(copyCommandEnd(command));
     }
     else if (direction == "u") {
-        ui->swipe_up_start->setText(command);
+        ui->swipe_up_start->setText(copyCommandStart(command));
+        ui->swipe_up_update->setText(copyCommandUpdate(command));
+        ui->swipe_up_end->setText(copyCommandEnd(command));
     }
     else if (direction == "d") {
-        ui->swipe_down_start->setText(command);
+        ui->swipe_down_start->setText(copyCommandStart(command));
+        ui->swipe_down_update->setText(copyCommandUpdate(command));
+        ui->swipe_down_end->setText(copyCommandEnd(command));
     }
     else if (direction == "lu") {
-        ui->swipe_up_left_start->setText(command);
+        ui->swipe_up_left_start->setText(copyCommandStart(command));
+        ui->swipe_up_left_update->setText(copyCommandUpdate(command));
+        ui->swipe_up_left_end->setText(copyCommandEnd(command));
     }
     else if (direction == "rd") {
-        ui->swipe_down_right_start->setText(command);
+        ui->swipe_down_right_start->setText(copyCommandStart(command));
+        ui->swipe_down_right_update->setText(copyCommandUpdate(command));
+        ui->swipe_down_right_end->setText(copyCommandEnd(command));
     }
     else if (direction == "ld") {
-        ui->swipe_down_left_start->setText(command);
+        ui->swipe_down_left_start->setText(copyCommandStart(command));
+        ui->swipe_down_left_update->setText(copyCommandUpdate(command));
+        ui->swipe_down_left_end->setText(copyCommandEnd(command));
     }
     else if (direction == "ru") {
-        ui->swipe_up_right_start->setText(command);
+        ui->swipe_up_right_start->setText(copyCommandStart(command));
+        ui->swipe_up_right_update->setText(copyCommandUpdate(command));
+        ui->swipe_up_right_end->setText(copyCommandEnd(command));
     }
 }
 
@@ -84,11 +100,7 @@ void GesturesView::copySwipeCommands(QJsonValue swipeCommands) {
     QJsonObject commands =  swipeCommands.toObject();
     foreach(const QString& direction, commands.keys()) {
        qDebug() << direction;
-       QJsonObject value = commands.value(direction).toObject();
-       QString command;
-       command += copyCommandStart(value);
-       command += copyCommandUpdate(value);
-       command += copyCommandEnd(value);
+       QJsonObject command = commands.value(direction).toObject();
        setCommand(direction, command);
        qDebug() << command;
     }
