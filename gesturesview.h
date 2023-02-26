@@ -19,12 +19,12 @@ public:
 private:
     Ui::GesturesView *ui;
     int fingersCount;
-    void copyPinchCommands(QJsonValue value);
-    void copySwipeCommands(QJsonValue value);
-    void copyCommandsFromConfigFile();
-    QString copyCommandStart(QJsonObject value);
-    QString copyCommandUpdate(QJsonObject value);
-    QString copyCommandEnd(QJsonObject value);
+    void readPinchCommands(QJsonValue value);
+    void readSwipeCommands(QJsonValue value);
+    void readCommandsFromConfigFile();
+    QString readCommandStart(QJsonObject value);
+    QString readCommandUpdate(QJsonObject value);
+    QString readCommandEnd(QJsonObject value);
     void setCommand(QString direction, QJsonObject command);
     QString readConfigFile();
 };

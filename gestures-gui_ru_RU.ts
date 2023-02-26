@@ -57,82 +57,92 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="220"/>
+        <location filename="gesturesview.ui" line="44"/>
         <source>Gesture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="94"/>
+        <location filename="gesturesview.ui" line="124"/>
         <source>Swipe Up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="31"/>
+        <location filename="gesturesview.ui" line="194"/>
         <source>Swipe Down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="125"/>
+        <location filename="gesturesview.ui" line="174"/>
         <source>Swipe Left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="232"/>
+        <location filename="gesturesview.ui" line="231"/>
+        <source>Tab 1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gesturesview.ui" line="236"/>
+        <source>Tab 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gesturesview.ui" line="249"/>
         <source>PushButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="68"/>
+        <location filename="gesturesview.ui" line="145"/>
         <source>Swipe Right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="210"/>
+        <location filename="gesturesview.ui" line="187"/>
         <source>Command end</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="55"/>
+        <location filename="gesturesview.ui" line="104"/>
         <source>Swipe Up-Right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="154"/>
+        <location filename="gesturesview.ui" line="131"/>
         <source>Command update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="197"/>
+        <location filename="gesturesview.ui" line="167"/>
         <source>Swipe Up-Left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="45"/>
+        <location filename="gesturesview.ui" line="34"/>
         <source>Command start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="187"/>
+        <location filename="gesturesview.ui" line="69"/>
         <source>Swipe Down-Right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="168"/>
+        <location filename="gesturesview.ui" line="138"/>
         <source>Swipe Down-Left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="87"/>
+        <location filename="gesturesview.ui" line="214"/>
         <source>Tap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="38"/>
+        <location filename="gesturesview.ui" line="201"/>
         <source>Pinch In</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gesturesview.ui" line="147"/>
+        <location filename="gesturesview.ui" line="76"/>
         <source>Pinch Out</source>
         <translation type="unfinished"></translation>
     </message>

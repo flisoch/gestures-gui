@@ -6,6 +6,9 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QSettings>
+#include <QDebug>
+//#include <QInfo>
+#include <QTextStream>
 
 GesturesGui::GesturesGui(QWidget *parent)
     : QMainWindow(parent)
@@ -59,7 +62,7 @@ void GesturesGui::on_pushButton_clicked()
     QJsonDocument config = QJsonDocument::fromJson(text.toUtf8());
     QJsonObject o = config.object();
     QJsonValue value = o.value(QString("touchpad"));
-    qInfo() << value;
+    qDebug() << value;
 
 }
 
