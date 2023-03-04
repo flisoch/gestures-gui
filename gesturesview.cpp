@@ -10,7 +10,8 @@
 #include <QJsonArray>
 #include <QSettings>
 #include <QDebug>
-
+#include <QPushButton>
+#include "config.h"
 
 GesturesView::GesturesView(QWidget *parent, int fingersCount) :
     QWidget(parent),
@@ -18,13 +19,18 @@ GesturesView::GesturesView(QWidget *parent, int fingersCount) :
 {
     ui->setupUi(this);
     this->fingersCount = fingersCount;
+    config = new Config();
+    connect(ui->saveConfigButton, &QPushButton::released, this->config, &Config::saveCommands);
+    connect(this->config, &Config::configFileRead, this, &GesturesView::setConfig);
     readCommandsFromConfigFile();
 }
 
 GesturesView::~GesturesView()
 {
+    delete config;
     delete ui;
 }
+
 
 QString GesturesView::readCommandStart(QJsonObject value) {
 
@@ -95,17 +101,7 @@ void GesturesView::setCommand(QString direction, QJsonObject command) {
     }
 }
 
-void GesturesView::readSwipeCommands(QJsonValue swipeCommands) {
-    QString key = QString::number(fingersCount);
-    swipeCommands = swipeCommands.toObject()[key];
-    QJsonObject commands =  swipeCommands.toObject();
-    foreach(const QString& direction, commands.keys()) {
-       qDebug() << direction;
-       QJsonObject command = commands.value(direction).toObject();
-       setCommand(direction, command);
-       qDebug() << command;
-    }
-}
+
 
 void GesturesView::readPinchCommands(QJsonValue value) {
 
@@ -135,13 +131,36 @@ QString GesturesView::readConfigFile() {
     return text;
 }
 
+void GesturesView::setConfig(QJsonObject* json)
+{
+    QJsonValue commands = (*json)["touchpad"].toObject()["swipe"];
+    readSwipeCommands(commands);
+    commands = (*json)["touchpad"].toObject()["pinch"];
+    readPinchCommands(commands);
+}
+
+void GesturesView::readSwipeCommands(QJsonValue swipeCommands) {
+   QString key = QString::number(fingersCount);
+   swipeCommands = swipeCommands.toObject()[key];
+   QJsonObject commands =  swipeCommands.toObject();
+   foreach(const QString& direction, commands.keys()) {
+      qDebug() << direction;
+      QJsonObject command = commands.value(direction).toObject();
+      setCommand(direction, command);
+      qDebug() << command;
+   }
+}
+
+
+
 void GesturesView::readCommandsFromConfigFile()
 {
     QString text = readConfigFile();
-    QJsonObject config = QJsonDocument::fromJson(text.toUtf8()).object();
+    this->config->readCommands(text);
+}
 
-    QJsonValue commands = config["touchpad"].toObject()["swipe"];
-    readSwipeCommands(commands);
-    commands = config["touchpad"].toObject()["pinch"];
-    readPinchCommands(commands);
+
+void GesturesView::reloadGestures()
+{
+
 }

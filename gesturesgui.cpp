@@ -7,30 +7,27 @@
 #include <QJsonObject>
 #include <QSettings>
 #include <QDebug>
-//#include <QInfo>
 #include <QTextStream>
+#include <QAction>
 
 GesturesGui::GesturesGui(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::GesturesGui)
 {
     ui->setupUi(this);
-
-    QHBoxLayout *layout = new QHBoxLayout(ui->tab);
-    gestureview = new GesturesView(ui->tab, 2);
+    QHBoxLayout *layout = new QHBoxLayout(ui->tab_1);
+    gestureview = new GesturesView(ui->tab_1, 3);
     layout->addWidget(gestureview);
 
     layout = new QHBoxLayout(ui->tab_2);
-    gestureview = new GesturesView(ui->tab_2, 3);
+    gestureview = new GesturesView(ui->tab_2, 4);
     layout->addWidget(gestureview);
 
     layout = new QHBoxLayout(ui->tab_3);
-    gestureview = new GesturesView(ui->tab_3, 4);
+    gestureview = new GesturesView(ui->tab_3, 5);
     layout->addWidget(gestureview);
 
-    layout = new QHBoxLayout(ui->tab_4);
-    gestureview = new GesturesView(ui->tab_4, 5);
-    layout->addWidget(gestureview);
+    connect(ui->actionSet_config_file, &QAction::triggered, this, &GesturesGui::onConfigSettingClicked);
 }
 
 GesturesGui::~GesturesGui()
@@ -39,7 +36,7 @@ GesturesGui::~GesturesGui()
 }
 
 
-void GesturesGui::on_pushButton_clicked()
+void GesturesGui::onConfigSettingClicked()
 {
     QString filename =  QFileDialog::getOpenFileName(this, "Select config file", QDir::homePath());
 

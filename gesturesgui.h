@@ -22,7 +22,7 @@ public:
     ~GesturesGui();
 
 private slots:
-    void on_pushButton_clicked();
+    void onConfigSettingClicked();
 
 private:
     Ui::GesturesGui *ui;

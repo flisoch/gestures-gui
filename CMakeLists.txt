@@ -18,6 +18,8 @@ set(TS_FILES gestures-gui_ru_RU.ts)
 
 set(PROJECT_SOURCES
         main.cpp
+        config.h
+        config.cpp
         gesturesgui.cpp
         gesturesgui.h
         gesturesgui.ui

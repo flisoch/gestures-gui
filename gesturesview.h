@@ -2,7 +2,7 @@
 #define GESTURESVIEW_H
 
 #include <QWidget>
-
+#include "config.h"
 
 namespace Ui {
 class GesturesView;
@@ -16,7 +16,14 @@ public:
     explicit GesturesView(QWidget *parent = nullptr, int fingersCount = 1);
     ~GesturesView();
 
+    Config *config = nullptr;
+
+private slots:
+    void setConfig(QJsonObject *json);
+    void reloadGestures();
+
 private:
+
     Ui::GesturesView *ui;
     int fingersCount;
     void readPinchCommands(QJsonValue value);
