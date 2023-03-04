@@ -13,10 +13,9 @@ class GesturesView : public QWidget
     Q_OBJECT
 
 public:
-    explicit GesturesView(QWidget *parent = nullptr, int fingersCount = 1);
+    explicit GesturesView(QWidget *parent = nullptr, int fingersCount = 1, Config *config = nullptr);
     ~GesturesView();
-
-    Config *config = nullptr;
+    Config& config;
 
 private slots:
     void setConfig(QJsonObject *json);
@@ -29,6 +28,7 @@ private:
     void readPinchCommands(QJsonValue value);
     void readSwipeCommands(QJsonValue value);
     void readCommandsFromConfigFile();
+    QString readTap(QJsonArray value);
     QString readCommandStart(QJsonObject value);
     QString readCommandUpdate(QJsonObject value);
     QString readCommandEnd(QJsonObject value);

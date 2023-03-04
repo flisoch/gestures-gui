@@ -15,7 +15,6 @@ void Config::saveCommands()
 
 void Config::readCommands(QString text)
 {
-//    QJsonObject config = QJsonDocument::fromJson(text.toUtf8()).object();
     this->json = QJsonDocument::fromJson(text.toUtf8()).object();
     emit configFileRead(&this->json);
 }

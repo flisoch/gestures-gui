@@ -13,21 +13,20 @@
 #include <QPushButton>
 #include "config.h"
 
-GesturesView::GesturesView(QWidget *parent, int fingersCount) :
+GesturesView::GesturesView(QWidget *parent, int fingersCount, Config *c) :
     QWidget(parent),
-    ui(new Ui::GesturesView)
+    ui(new Ui::GesturesView),
+    config{*c}
 {
     ui->setupUi(this);
     this->fingersCount = fingersCount;
-    config = new Config();
-    connect(ui->saveConfigButton, &QPushButton::released, this->config, &Config::saveCommands);
-    connect(this->config, &Config::configFileRead, this, &GesturesView::setConfig);
+    connect(ui->saveConfigButton, &QPushButton::released, &this->config, &Config::saveCommands);
+    connect(&this->config, &Config::configFileRead, this, &GesturesView::setConfig);
     readCommandsFromConfigFile();
 }
 
 GesturesView::~GesturesView()
 {
-    delete config;
     delete ui;
 }
 
@@ -40,7 +39,15 @@ QString GesturesView::readCommandStart(QJsonObject value) {
         command += val.toString() + ",";
     }
     command.chop(1);
-    qDebug() << command;
+    return command;
+}
+
+QString GesturesView::readTap(QJsonArray value) {
+    QString command;
+    foreach(QJsonValue val, value) {
+        command += val.toString() + ",";
+    }
+    command.chop(1);
     return command;
 }
 
@@ -105,7 +112,7 @@ void GesturesView::setCommand(QString direction, QJsonObject command) {
 
 void GesturesView::readPinchCommands(QJsonValue value) {
 
-    ui->pinch_in_start->setText("pinch");
+//    ui->pinch_in_start->setText("pinch");
 }
 
 QString GesturesView::readConfigFile() {
@@ -145,6 +152,9 @@ void GesturesView::readSwipeCommands(QJsonValue swipeCommands) {
    QJsonObject commands =  swipeCommands.toObject();
    foreach(const QString& direction, commands.keys()) {
       qDebug() << direction;
+      if (direction == "t") {
+          ui->tap->setText(readTap(commands.value(direction).toArray()));
+      }
       QJsonObject command = commands.value(direction).toObject();
       setCommand(direction, command);
       qDebug() << command;
@@ -156,7 +166,7 @@ void GesturesView::readSwipeCommands(QJsonValue swipeCommands) {
 void GesturesView::readCommandsFromConfigFile()
 {
     QString text = readConfigFile();
-    this->config->readCommands(text);
+    this->config.readCommands(text);
 }
 
 

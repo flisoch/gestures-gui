@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "gesturesview.h"
+#include "config.h"
 
 #define ORGANIZATION_NAME "gestures-ui"
 #define ORGANIZATION_DOMAIN "www.example.com"
@@ -20,12 +21,14 @@ class GesturesGui : public QMainWindow
 public:
     GesturesGui(QWidget *parent = nullptr);
     ~GesturesGui();
-
+signals:
+    void configFileChanged();
 private slots:
     void onConfigSettingClicked();
 
 private:
     Ui::GesturesGui *ui;
     GesturesView *gestureview;
+    Config *config = nullptr;
 };
 #endif // GESTURESGUI_H

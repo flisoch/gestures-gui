@@ -15,17 +15,19 @@ GesturesGui::GesturesGui(QWidget *parent)
     , ui(new Ui::GesturesGui)
 {
     ui->setupUi(this);
+    config = new Config();
     QHBoxLayout *layout = new QHBoxLayout(ui->tab_1);
-    gestureview = new GesturesView(ui->tab_1, 3);
+    gestureview = new GesturesView(ui->tab_1, 3, config);
     layout->addWidget(gestureview);
 
     layout = new QHBoxLayout(ui->tab_2);
-    gestureview = new GesturesView(ui->tab_2, 4);
+    gestureview = new GesturesView(ui->tab_2, 4, config);
     layout->addWidget(gestureview);
 
     layout = new QHBoxLayout(ui->tab_3);
-    gestureview = new GesturesView(ui->tab_3, 5);
+    gestureview = new GesturesView(ui->tab_3, 5, config);
     layout->addWidget(gestureview);
+
 
     connect(ui->actionSet_config_file, &QAction::triggered, this, &GesturesGui::onConfigSettingClicked);
 }
@@ -33,6 +35,7 @@ GesturesGui::GesturesGui(QWidget *parent)
 GesturesGui::~GesturesGui()
 {
     delete ui;
+    delete config;
 }
 
 
@@ -56,10 +59,6 @@ void GesturesGui::onConfigSettingClicked()
        }
     file.close();
     text.replace("'", "\"");
-    QJsonDocument config = QJsonDocument::fromJson(text.toUtf8());
-    QJsonObject o = config.object();
-    QJsonValue value = o.value(QString("touchpad"));
-    qDebug() << value;
-
+    config->readCommands(text);
 }
 
