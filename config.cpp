@@ -1,5 +1,6 @@
 #include <QJsonDocument>
 #include <QDebug>
+#include <QProcess>
 #include "config.h"
 
 Config::Config()
@@ -9,8 +10,8 @@ Config::Config()
 
 void Config::saveCommands()
 {
-    // todo: QJsonObject to QText
-//    QString text = json.
+    if (QProcess::execute(QString("/bin/sh ") + "/home/flisoch/.config/gestures-ui/restart_gestures.sh") < 0)
+        qDebug() << "Failed to run";
 }
 
 void Config::readCommands(QString text)
